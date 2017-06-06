@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityFramework", "EntityFr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infant.Education.Framework", "Infant.Education.Framework\Infant.Education.Framework.csproj", "{986A72CB-0D12-4A01-B7AE-EBE6A4DE1456}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infant.Education.IProvider", "Infant.Education.IProvider\Infant.Education.IProvider.csproj", "{F16747C9-4B03-44E5-AB31-2F7E5D73DC75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{986A72CB-0D12-4A01-B7AE-EBE6A4DE1456}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{986A72CB-0D12-4A01-B7AE-EBE6A4DE1456}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{986A72CB-0D12-4A01-B7AE-EBE6A4DE1456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F16747C9-4B03-44E5-AB31-2F7E5D73DC75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F16747C9-4B03-44E5-AB31-2F7E5D73DC75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F16747C9-4B03-44E5-AB31-2F7E5D73DC75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F16747C9-4B03-44E5-AB31-2F7E5D73DC75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,5 +53,6 @@ Global
 		{2039EA84-6F39-4946-87B3-15E2A6922A15} = {BB675CBC-835B-4BA9-8125-E66CDCAAD486}
 		{96227F9F-24CC-468E-B4DF-4FED19C0080C} = {4979F97A-4D1C-472F-A2BD-A45FA4CD996D}
 		{986A72CB-0D12-4A01-B7AE-EBE6A4DE1456} = {3FA2516D-07FC-4B46-A7E4-30B8131E19E1}
+		{F16747C9-4B03-44E5-AB31-2F7E5D73DC75} = {BB675CBC-835B-4BA9-8125-E66CDCAAD486}
 	EndGlobalSection
 EndGlobal

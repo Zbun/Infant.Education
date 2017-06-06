@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{96227F9F-24CC-468E-B4DF-4FED19C0080C}</ProjectGuid>
+    <ProjectGuid>{F16747C9-4B03-44E5-AB31-2F7E5D73DC75}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Infant.Education.Common</RootNamespace>
-    <AssemblyName>Infant.Education.Common</AssemblyName>
+    <RootNamespace>Infant.Education.IProvider</RootNamespace>
+    <AssemblyName>Infant.Education.IProvider</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,15 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,25 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cache\CacheHelper.cs" />
-    <Compile Include="Cache\CookieHelper.cs" />
-    <Compile Include="Cache\SessionHelper.cs" />
-    <Compile Include="Config\ConfigHelper.cs" />
-    <Compile Include="Config\SerializationHelper.cs" />
-    <Compile Include="Enum.cs" />
-    <Compile Include="Net\Spider.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Text\DESEncrypt.cs" />
-    <Compile Include="Text\Md5.cs" />
-    <Compile Include="Text\RMBHelper.cs" />
-    <Compile Include="Text\StringExtension.cs" />
-    <Compile Include="Web\Thumbnail.cs" />
-    <Compile Include="Web\VerifyCodeHelper.cs" />
-    <Compile Include="Web\WaterMark.cs" />
-    <Compile Include="Web\WebHandle.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Infant.Education.Common\Infant.Education.Common.csproj">
+      <Project>{96227f9f-24cc-468e-b4df-4fed19c0080c}</Project>
+      <Name>Infant.Education.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infant.Education.Framework\Infant.Education.Framework.csproj">
+      <Project>{986a72cb-0d12-4a01-b7ae-ebe6a4de1456}</Project>
+      <Name>Infant.Education.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
