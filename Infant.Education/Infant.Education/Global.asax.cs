@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Infant.Education.Core.IocFactory;
+using Infant.Education.Framework;
+using log4net.Config;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +21,11 @@ namespace Infant.Education
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+
+            XmlConfigurator.Configure(new System.IO.FileInfo("log4net.config"));
+            DatabaseInitializer.Initialize();
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
         }
     }
 }

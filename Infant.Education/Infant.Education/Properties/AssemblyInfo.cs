@@ -21,7 +21,7 @@ using System.Runtime.InteropServices;
 
 // 如果此项目向 COM 公开，则下列 GUID 用于 typelib 的 ID
 [assembly: Guid("264dd8d5-26a7-4731-bd22-4ae081d62c60")]
-
+[assembly: log4net.Config.XmlConfigurator(Watch = true, ConfigFile = "log4net.config")]
 // 程序集的版本信息由下列四个值组成:
 //
 //      主版本
