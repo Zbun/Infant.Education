@@ -11,6 +11,7 @@ namespace Infant.Education
             bundles.IgnoreList.Clear();
             bundles.Add(
                new StyleBundle("~/Bundles/App/vendor/css")
+               .Include("~/Content/style.css", new CssRewriteUrlTransform())
                .Include("~/Content/assets/global/plugins/font-awesome/css/font-awesome.min.css", new CssRewriteUrlTransform())
                .Include("~/Content/assets/global/plugins/simple-line-icons/simple-line-icons.min.css", new CssRewriteUrlTransform())
                .Include("~/Content/assets/global/plugins/bootstrap/css/bootstrap.min.css", new CssRewriteUrlTransform())
