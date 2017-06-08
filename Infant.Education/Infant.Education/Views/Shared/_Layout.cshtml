@@ -11,18 +11,106 @@
     @RenderSection("html_head", false)
     <title>@ViewBag.Title</title>
 </head>
-<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
-    @RenderBody()
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white  page-footer-fixed">
+    <div class="page-header navbar navbar-fixed-top">
+        <div class="page-header-inner ">
+            <div class="page-logo">
+                <a href="/Home/Index">
+                </a>
+                <div class="menu-toggler sidebar-toggler">
+                    <span></span>
+                </div>
+            </div>
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                <span></span>
+            </a>
+            <div class="top-menu">
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown dropdown-user">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <img alt="" class="img-circle" src="/Content/assets/layouts/layout/img/avatar8.jpg" />
+                            <span class="username username-hide-on-mobile"> Nick </span>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-default">
+                            <li>
+                                <a href="/">
+                                    <i class="icon-key"></i> 退出登录
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown dropdown-quick-sidebar-toggler">
+                        <a href="/" class="dropdown-toggle">
+                            <i class="icon-logout"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+    <div class="page-container">
+        <div class="page-sidebar-wrapper">
+            <div class="page-sidebar navbar-collapse collapse">
+                <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                    <li class="sidebar-toggler-wrapper hide">
+                        <div class="sidebar-toggler">
+                            <span></span>
+                        </div>
+                    </li>
+                    <li class="nav-item start active open">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="icon-home"></i>
+                            <span class="title">Dashboard</span>
+                            <span class="selected"></span>
+                            <span class="arrow open"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item start active open">
+                                <a href="index.html" class="nav-link ">
+                                    <i class="icon-bar-chart"></i>
+                                    <span class="title">Dashboard 1</span>
+                                    <span class="selected"></span>
+                                </a>
+                            </li>
+                            <li class="nav-item start ">
+                                <a href="dashboard_2.html" class="nav-link ">
+                                    <i class="icon-bulb"></i>
+                                    <span class="title">Dashboard 2</span>
+                                    <span class="badge badge-success">1</span>
+                                </a>
+                            </li>
+                            <li class="nav-item start ">
+                                <a href="dashboard_3.html" class="nav-link ">
+                                    <i class="icon-graph"></i>
+                                    <span class="title">Dashboard 3</span>
+                                    <span class="badge badge-danger">5</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                @RenderBody()
+            </div>
+        </div>
+        <a href="javascript:;" class="page-quick-sidebar-toggler">
+            <i class="icon-login"></i>
+        </a>
+    </div>
+    <div class="page-footer">
+        <div class="page-footer-inner">
+            @DateTime.Now.Year &copy; tom团队运营维护.
+        </div>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
+    </div>
     @Scripts.Render("~/Bundles/App/vendor/js")
-    <script type="text/javascript">
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?aa6d86f0083adcac351c6318d9c4cdaa";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
     @RenderSection("html_footer_js", false)
 </body>
 </html>
