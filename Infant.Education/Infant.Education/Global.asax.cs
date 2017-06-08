@@ -23,9 +23,9 @@ namespace Infant.Education
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
 
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
             XmlConfigurator.Configure(new System.IO.FileInfo("log4net.config"));
             DatabaseInitializer.Initialize();
-            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
         }
     }
 }

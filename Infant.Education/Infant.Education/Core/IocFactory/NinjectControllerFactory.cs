@@ -1,4 +1,6 @@
 ﻿using Infant.Education.Framework;
+using Infant.Education.IProvider;
+using Infant.Education.Provider;
 using Ninject;
 using System;
 using System.Collections.Generic;
@@ -28,6 +30,9 @@ namespace Infant.Education.Core.IocFactory
         {
             Kernel.Bind<IUnitOfWork>().To<EfUnitOfWorkContext>();
             Kernel.Bind(typeof(IRepository<>)).To(typeof(EfRepositoryBaseOfDbContext<>));
+
+            Kernel.Bind<ISysAdminProvider>().To<SysAdminProvider>();
+            
         }
     }
 }

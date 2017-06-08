@@ -12,6 +12,8 @@ namespace Infant.Education.Framework
     {
         public IDbSet<Log> LogDbSet { get; set; }
 
+        public IDbSet<SysAdmin> SysAdminDbSet { get; set; }
+
         public EfDbContext() : base("Default")
         { }
     }

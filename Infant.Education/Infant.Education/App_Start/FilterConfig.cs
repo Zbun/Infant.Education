@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using Infant.Education.Core;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Infant.Education
@@ -7,6 +8,7 @@ namespace Infant.Education
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
+            filters.Add(new AuthorizeFilter());
             filters.Add(new HandleErrorAttribute());
         }
     }
