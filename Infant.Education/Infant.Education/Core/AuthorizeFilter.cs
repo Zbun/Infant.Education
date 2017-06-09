@@ -47,6 +47,14 @@ namespace Infant.Education.Core
 
             if (UserContext.CurUserInfo == null)
             {
+                if (filterContext.Controller.TempData.ContainsKey("msg"))
+                {
+                    filterContext.Controller.TempData["msg"] = "登录超时，请重新登录";
+                }
+                else
+                {
+                    filterContext.Controller.TempData.Add("msg", "登录超时，请重新登录");
+                }
                 filterContext.RequestContext.HttpContext.Response.Redirect("~/Account/Login");
             }
         }

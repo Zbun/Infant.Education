@@ -14,6 +14,12 @@ namespace Infant.Education.Controllers
             return View();
         }
 
+        public ActionResult LogOff()
+        {
+            UserContext.LoginOut();
+            return RedirectToAction("Login", "Account");
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

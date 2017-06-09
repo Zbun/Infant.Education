@@ -42,8 +42,8 @@ namespace Infant.Education.Framework.Entities
         /// <summary>
         /// 用户密码
         /// </summary>
-        [DataType(DataType.Password)]
-        [StringLength(14, MinimumLength = 6, ErrorMessage = "密码长度为6至14位")]
+        [Required]
+        [StringLength(32)]
         public string PassWord { get; set; }
 
         /// <summary>
