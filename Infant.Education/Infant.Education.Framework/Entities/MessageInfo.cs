@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,16 +17,22 @@ namespace Infant.Education.Framework.Entities
         {
         }
 
-        public MessageInfo(SysAdmin sysAdmin,string content)
+        public MessageInfo(SysAdmin sysAdmin, string content, int sort)
         {
-            SysAdmin = sysAdmin;
+            UserId = sysAdmin.Id;
             Content = content;
+            Sort = sort;
         }
         public int Id { get; set; }
 
-        public SysAdmin SysAdmin { get; set; }
+        public virtual SysAdmin SysAdmin { get; set; }
 
         [StringLength(200), Required]
         public string Content { get; set; }
+
+        public int Sort { get; set; }
+
+        [ForeignKey("SysAdmin")]
+        public int UserId { get; set; }
     }
 }

@@ -1,6 +1,8 @@
-﻿@{
+﻿@model List<Infant.Education.Framework.Entities.SysAdmin>
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="page-bar">
     <ul class="page-breadcrumb">
         <li>
@@ -24,9 +26,9 @@
             </div>
             <div class="details">
                 <div class="number">
-                    <span data-counter="counterup" data-value="1349">0</span>
+                    <span data-counter="counterup" data-value="@Model.Count(x=>x.AddDate>DateTime.Now.AddDays(-7))">0</span>
                 </div>
-                <div class="desc"> 近三天创建的用户 </div>
+                <div class="desc"> 近一周创建的用户 </div>
             </div>
         </a>
     </div>
@@ -37,7 +39,7 @@
             </div>
             <div class="details">
                 <div class="number">
-                    <span data-counter="counterup" data-value="1265">0</span>
+                    <span data-counter="counterup" data-value="@Model.Count">0</span>
                 </div>
                 <div class="desc"> 总用户数 </div>
             </div>
@@ -50,25 +52,25 @@
             </div>
             <div class="details">
                 <div class="number">
-                    <span data-counter="counterup" data-value="549">0</span>
+                    <span data-counter="counterup" data-value="@Model.Count(x=>x.LastLoginTime>DateTime.Parse(DateTime.Now.ToShortTimeString()))">0</span>
                 </div>
                 <div class="desc"> 今天登录的用户 </div>
             </div>
         </a>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    @*<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <a class="dashboard-stat dashboard-stat-v2 purple" href="#">
             <div class="visual">
                 <i class="fa fa-globe"></i>
             </div>
             <div class="details">
                 <div class="number">
-                    <span data-counter="counterup" data-value="89"></span>
+                    <span data-counter="counterup" data-value="5">5</span>
                 </div>
                 <div class="desc"> 今天签到的用户 </div>
             </div>
         </a>
-    </div>
+    </div>*@
 </div>
 <div class="row">
     <div class="col-md-6 col-sm-6">

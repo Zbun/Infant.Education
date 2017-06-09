@@ -14,10 +14,13 @@ namespace Infant.Education.Provider
     public class SysAdminProvider : EfRepositoryBase<EfDbContext, SysAdmin>, ISysAdminProvider
     {
         private readonly IRepository<SysAdmin> sysAdminRepository;
+        private readonly IRepository<MessageInfo> messageInfoRepository;
         public SysAdminProvider(IUnitOfWork UnitOfWork,
-             IRepository<SysAdmin> _sysAdminRepository) : base(UnitOfWork)
+             IRepository<SysAdmin> _sysAdminRepository,
+             IRepository<MessageInfo> _messageInfoRepository) : base(UnitOfWork)
         {
             sysAdminRepository = _sysAdminRepository;
+            messageInfoRepository = _messageInfoRepository;
         }
 
         public async Task<SysAdmin> Login(string userName, string password, UserType usetype)
@@ -30,6 +33,7 @@ namespace Infant.Education.Provider
                 userInfo.LastLoginIP = WebHandle.UserIP;
                 userInfo.LoginTimes += 1;
                 sysAdminRepository.Update(userInfo);
+                messageInfoRepository.Insert(new MessageInfo(userInfo, string.Format("{0} {1} 登录了系统", usetype == UserType.Admin ? "管理员" : "用户", userInfo.RealName), 1));
             }
             return userInfo;
         }

@@ -10,6 +10,5 @@ namespace Infant.Education.Controllers
     [AuthorizeFilter(IsNeedLogin = true)]
     public abstract class BaseController : Controller
     {
-
     }
 }
