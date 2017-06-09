@@ -4,7 +4,7 @@
 <div class="page-bar">
     <ul class="page-breadcrumb">
         <li>
-            <a href="@Url.Action("/")">首页</a>
+            <a href="@Url.Action("Index")">首页</a>
             <i class="fa fa-circle"></i>
         </li>
         <li>
@@ -83,60 +83,18 @@
             <div class="portlet-body" id="chats">
                 <div class="scroller" style="height: 525px;" data-always-visible="1" data-rail-visible1="1">
                     <ul class="chats">
-                        <li class="out">
-                            <img class="avatar" alt="" src="/Content/assets/layouts/layout/img/avatar2.jpg" />
-                            <div class="message">
-                                <span class="arrow"> </span>
-                                <a href="javascript:;" class="name"> 张三 </a>
-                                <span class="datetime"> at 20:11 </span>
-                                <span class="body"> 你好你好初次见面 </span>
-                            </div>
-                        </li>
-                        <li class="out">
-                            <img class="avatar" alt="" src="/Content/assets/layouts/layout/img/avatar2.jpg" />
-                            <div class="message">
-                                <span class="arrow"> </span>
-                                <a href="javascript:;" class="name"> 张三 </a>
-                                <span class="datetime"> at 20:11 </span>
-                                <span class="body"> 你好你好初次见面 </span>
-                            </div>
-                        </li>
-                        <li class="in">
-                            <img class="avatar" alt="" src="/Content/assets/layouts/layout/img/avatar1.jpg" />
-                            <div class="message">
-                                <span class="arrow"> </span>
-                                <a href="javascript:;" class="name"> 张三 </a>
-                                <span class="datetime"> at 20:30 </span>
-                                <span class="body"> 你好你好初次见面 </span>
-                            </div>
-                        </li>
-                        <li class="in">
-                            <img class="avatar" alt="" src="/Content/assets/layouts/layout/img/avatar1.jpg" />
-                            <div class="message">
-                                <span class="arrow"> </span>
-                                <a href="javascript:;" class="name"> 张三 </a>
-                                <span class="datetime"> at 20:30 </span>
-                                <span class="body"> 你好你好初次见面  </span>
-                            </div>
-                        </li>
-                        <li class="out">
-                            <img class="avatar" alt="" src="/Content/assets/layouts/layout/img/avatar3.jpg" />
-                            <div class="message">
-                                <span class="arrow"> </span>
-                                <a href="javascript:;" class="name"> Richard Doe </a>
-                                <span class="datetime"> at 20:33 </span>
-                                <span class="body"> 你好你好初次见面  </span>
-                            </div>
-                        </li>
-                        <li class="in">
-                            <img class="avatar" alt="" src="/Content/assets/layouts/layout/img/avatar3.jpg" />
-                            <div class="message">
-                                <span class="arrow"> </span>
-                                <a href="javascript:;" class="name"> Richard Doe </a>
-                                <span class="datetime"> at 20:35 </span>
-                                <span class="body"> 你好你好初次见面  </span>
-                            </div>
-                        </li>
+                        @foreach (Infant.Education.Framework.Entities.MessageInfo message in ViewBag.MessageInfoList)
+                        {
+                            <li class="@(message.SysAdmin.Sex==0?"in":"out")">
+                                <img class="avatar" alt="" src="@(message.SysAdmin.Sex==0?"/Content/assets/layouts/layout/img/avatar1.jpg":"/Content/assets/layouts/layout/img/avatar2.jpg")" />
+                                <div class="message">
+                                    <span class="arrow"> </span>
+                                    <a href="javascript:;" class="name"> @message.SysAdmin.RealName </a>
+                                    <span class="datetime"> at @message.AddDate.ToString("MM-dd HH:mm") </span>
+                                    <span class="body"> @message.Content </span>
+                                </div>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

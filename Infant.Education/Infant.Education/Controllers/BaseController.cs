@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Infant.Education.Controllers
 {
-    [AuthorizeType(NeedLogin = true)]
+    [AuthorizeFilter(IsNeedLogin = true)]
     public abstract class BaseController : Controller
     {
 

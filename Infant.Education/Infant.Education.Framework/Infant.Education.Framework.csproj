@@ -55,6 +55,7 @@
     <Compile Include="EfUnitOfWorkContext.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Log.cs" />
+    <Compile Include="Entities\MessageInfo.cs" />
     <Compile Include="Entities\SysAdmin.cs" />
     <Compile Include="Enums\UserType.cs" />
     <Compile Include="IRepository.cs" />

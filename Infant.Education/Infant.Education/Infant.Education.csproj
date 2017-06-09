@@ -212,7 +212,6 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Core\AuthorizeFilter.cs" />
-    <Compile Include="Core\AuthorizeTypeAttribute.cs" />
     <Compile Include="Core\CustomExceptionFilter.cs" />
     <Compile Include="Core\IocFactory\NinjectControllerFactory.cs" />
     <Compile Include="Core\UserContext.cs" />

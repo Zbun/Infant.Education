@@ -102,6 +102,11 @@ namespace Infant.Education.Framework.Entities
         public string UpdateUser { get; set; }
 
         /// <summary>
+        /// 性别0男 1女
+        /// </summary>
+        public int Sex { get; set; }
+
+        /// <summary>
         /// 用户类型
         /// </summary>
         public UserType IdentityType { get; set; }

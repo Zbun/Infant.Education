@@ -38,6 +38,8 @@ namespace Infant.Education.Framework
         {
             SysAdmin model = new SysAdmin("tom", "419187544@qq.com", "tom", Enums.UserType.Admin);
             context.SysAdminDbSet.Add(model);
+            MessageInfo messageInfo = new MessageInfo(model,"欢迎使用由tom团队为您定制开发的后台管理系统，该平台支持响应式操作，您可以在手机上、pad上直接操作管理后台，如果您有什么问题可以电话联系我13673661182");
+            context.MessageInfoDbSet.Add(messageInfo);
             context.SaveChanges();
         }
     }

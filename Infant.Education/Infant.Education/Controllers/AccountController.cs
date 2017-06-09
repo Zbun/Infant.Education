@@ -16,7 +16,7 @@ using Infant.Education.Framework.Enums;
 
 namespace Infant.Education.Controllers
 {
-    [AuthorizeType(NeedLogin =false)]
+    [AuthorizeFilter(IsNeedLogin = false)]
     public class AccountController : BaseController
     {
         private readonly ISysAdminProvider sysAdminProvider;

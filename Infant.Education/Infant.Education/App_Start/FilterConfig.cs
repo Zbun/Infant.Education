@@ -8,8 +8,8 @@ namespace Infant.Education
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new AuthorizeFilter());
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new CustomExceptionFilter());
+            filters.Add(new AuthorizeFilterAttribute());
         }
     }
 }
